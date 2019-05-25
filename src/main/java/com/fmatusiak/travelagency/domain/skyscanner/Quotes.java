@@ -20,19 +20,33 @@ public class Quotes {
     private long price;
 
     @JsonProperty("OutboundLeg")
-    private List<OutboundLeg> quotes;
+    private List<OutboundLeg> outboundLegs;
+
+    @JsonProperty("Places")
+    private List<Places> places;
+
+    @JsonProperty("OriginId")
+    private long originId;
+
+    @JsonProperty("DepartureDate")
+    private String departureDate;
 
     static class OutboundLeg {
         @JsonProperty("CarrierIds")
         private CarrierIds carrierIds;
-
-        @JsonProperty("DepartureDate")
-        private String departureDate;
     }
 
     static class CarrierIds {
         @JsonProperty
         private long id;
+    }
+
+    static class Places {
+        @JsonProperty("PlaceId")
+        private String placeId;
+
+        @JsonProperty("Name")
+        private String name;
     }
 
 }

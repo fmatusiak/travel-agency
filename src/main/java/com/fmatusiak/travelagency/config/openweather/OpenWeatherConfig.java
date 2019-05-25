@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.config;
+package com.fmatusiak.travelagency.config.openweather;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class OpenWeatherConfig {
     @Value("${openweather.host}")
-    private String openWeatherHost;
+    private String host;
 
     @Value("${openweather.key}")
-    private String openWeatherKey;
+    private String key;
 }
