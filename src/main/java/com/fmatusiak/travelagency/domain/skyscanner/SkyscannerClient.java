@@ -17,16 +17,14 @@ public class SkyscannerClient {
     private SkyscannerConfig skyscannerConfig;
 
     public Quotes getFlightsWithoutDepartureDates(final FlightSearch flightSearch) {
-        System.out.println(flightSearch);
-        URI url = UriComponentsBuilder.fromHttpUrl(skyscannerConfig.getEndpoint()
+        URI url = UriComponentsBuilder
+                .fromHttpUrl(skyscannerConfig.getEndpoint()
                 + "PL/"
                 + "PLN/"
                 + "pl-PL/"
                 + flightSearch.getArrivalCity() + "/"
                 + flightSearch.getDepartureCity() + "/"
-                + flightSearch.getArrivalDates() + "?"
-                + "apiKey="
-                + skyscannerConfig.getKey())
+                        + flightSearch.getArrivalDates())
                 .build().encode().toUri();
         return restTemplate.postForObject(url, null, Quotes.class);
     }

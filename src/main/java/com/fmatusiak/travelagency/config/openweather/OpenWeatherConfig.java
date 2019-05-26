@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class OpenWeatherConfig {
-    @Value("${openweather.host}")
-    private String host;
+    @Value("${openweather.endpoint}")
+    private String enpoint;
 
     @Value("${openweather.key}")
     private String key;
