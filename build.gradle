@@ -24,6 +24,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.projectlombok:lombok'
+    compile "com.amadeus:amadeus-java:3.1.0"
     runtimeOnly 'mysql:mysql-connector-java'
+    compile 'com.google.code.gson:gson:2.8.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
