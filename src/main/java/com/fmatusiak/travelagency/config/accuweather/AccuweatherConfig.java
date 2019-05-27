@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class AccuweatherConfig {
+
     @Value("${accuweather.endpoint}")
     private String enpoint;
 
@@ -15,6 +16,9 @@ public class AccuweatherConfig {
 
     @Value("${accuweather.endpoint.locations.cities}")
     private String endpointLocationsCities;
+
+    @Value("${accuweather.endpoint.locations.topcities}")
+    private String endpointLocationsTopCities;
 
     @Value("${accuweather.key}")
     private String key;

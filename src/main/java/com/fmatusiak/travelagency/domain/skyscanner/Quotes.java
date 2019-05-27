@@ -16,6 +16,7 @@ import java.util.List;
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Quotes {
+
     @JsonProperty("MinPrice")
     private long price;
 

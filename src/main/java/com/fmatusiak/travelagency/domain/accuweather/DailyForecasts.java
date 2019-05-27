@@ -7,16 +7,24 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DailyForecasts {
-    @JsonProperty("Date")
-    private String date;
 
-    @JsonProperty("Temperature")
-    private Temperature temperature;
+    @JsonProperty("DailyForecasts")
+    private Weather weather;
+
+    static class Weather {
+        @JsonProperty("Date")
+        private List<String> date;
+
+        @JsonProperty("Temperature")
+        private List<Temperature> temperature;
+    }
 
     static class Temperature {
         @JsonProperty("Minimum")

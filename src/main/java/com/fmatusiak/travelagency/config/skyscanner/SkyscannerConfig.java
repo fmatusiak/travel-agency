@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class SkyscannerConfig {
+
     @Value("${skyscanner.host}")
     private String host;
 
