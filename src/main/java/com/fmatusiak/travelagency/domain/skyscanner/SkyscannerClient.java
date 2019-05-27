@@ -16,28 +16,28 @@ public class SkyscannerClient {
     @Autowired
     private SkyscannerConfig skyscannerConfig;
 
-    public Quotes getFlightsWithoutDepartureDates(final FlightSearch flightSearch) {
+    public Quotes getFlightsWithoutDepartureDates(final Flight flight) {
         URI url = UriComponentsBuilder
                 .fromHttpUrl(skyscannerConfig.getEndpoint()
                 + "PL/"
                 + "PLN/"
                 + "pl-PL/"
-                + flightSearch.getArrivalCity() + "/"
-                + flightSearch.getDepartureCity() + "/"
-                        + flightSearch.getArrivalDates())
+                        + flight.getArrivalCity() + "/"
+                        + flight.getDepartureCity() + "/"
+                        + flight.getArrivalDates())
                 .build().encode().toUri();
         return restTemplate.postForObject(url, null, Quotes.class);
     }
 
-    public Quotes getFlightsWithDepartureDates(final FlightSearch flightSearch) {
+    public Quotes getFlightsWithDepartureDates(final Flight flight) {
         URI url = UriComponentsBuilder.fromHttpUrl(skyscannerConfig.getEndpoint()
                 + "PL/"
                 + "PLN/"
                 + "pl-PL/"
-                + flightSearch.getArrivalCity() + "/"
-                + flightSearch.getDepartureCity() + "/"
-                + flightSearch.getArrivalDates() + "/"
-                + flightSearch.getDepartureDates() + "?"
+                + flight.getArrivalCity() + "/"
+                + flight.getDepartureCity() + "/"
+                + flight.getArrivalDates() + "/"
+                + flight.getDepartureDates() + "?"
                 + "apiKey="
                 + skyscannerConfig.getKey())
                 .build().encode().toUri();
