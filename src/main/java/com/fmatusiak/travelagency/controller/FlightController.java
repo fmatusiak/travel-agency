@@ -1,13 +1,17 @@
 package com.fmatusiak.travelagency.controller;
 
 import com.amadeus.exceptions.ResponseException;
-import com.amadeus.resources.FlightOffer;
+import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
+import com.fmatusiak.travelagency.domain.amadeus.flight.FlightOffer;
+import com.fmatusiak.travelagency.mapper.amadeus.flight.FlightOfferMapper;
 import com.fmatusiak.travelagency.service.amadeus.FlightsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/flight")
@@ -16,12 +20,21 @@ public class FlightController {
     @Autowired
     private FlightsService flightsService;
 
+    @Autowired
+    private FlightOfferMapper flightOfferMapper;
+
+    @GetMapping(value = "getTravelClass")
+    public List<TravelClass> getTravelClass(){
+        return flightsService.getTravelClass();
+    }
+
     @GetMapping(value = "flightsbydate")
-    public FlightOffer[] findFlightsByDate(
+    public List<FlightOffer> findFlightsByDate(
             @RequestParam String originPlace
             , @RequestParam String destinationPlace
             , @RequestParam String date) throws ResponseException {
-        return flightsService.findFlightsByDate(originPlace, destinationPlace, date);
+        return flightOfferMapper.FlightOfferAmadeusTabToFlightOfferListMapper(
+                flightsService.findFlightsByDate(originPlace, destinationPlace, date));
     }
 
 

@@ -29,7 +29,7 @@ public class AccuweatherClient {
         return Arrays.asList(Optional.ofNullable(restTemplate.getForObject(uri, City[].class)).orElse(new City[0]));
     }
 
-    public DailyForecasts checkWeatherByCityKey(int cityKey) {
+    public DailyForecasts getCheckWeatherByCityKey(int cityKey) {
         URI uri = UriComponentsBuilder
                 .fromHttpUrl(accuweatherConfig.getEndpointForecasts() + cityKey)
                 .queryParam("apikey", accuweatherConfig.getKey())

@@ -16,7 +16,7 @@ public class WeatherController {
 
     @GetMapping(value = "checkweather")
     public DailyForecasts checkWeatherByCityKey(@RequestParam int cityKey) {
-        return weatherService.checkWeatherByCityKey(cityKey);
+        return weatherService.getCheckWeatherByCityKey(cityKey);
     }
 
 }

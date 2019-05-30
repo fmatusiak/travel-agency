@@ -1,9 +1,11 @@
 package com.fmatusiak.travelagency.domain.amadeus.flight;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
