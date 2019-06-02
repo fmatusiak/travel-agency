@@ -11,7 +11,9 @@ public class WeatherService {
     @Autowired
     private AccuweatherClient accuweatherClient;
 
-    public DailyForecasts getCheckWeatherByCityKey(int cityKey) {
-        return accuweatherClient.getCheckWeatherByCityKey(cityKey);
+    public DailyForecasts getWeatherByCityKey(int cityKey) {
+        return accuweatherClient.getWeatherByCityKey(cityKey);
     }
+
+
 }

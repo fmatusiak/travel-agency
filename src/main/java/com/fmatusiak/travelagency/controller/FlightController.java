@@ -6,10 +6,7 @@ import com.fmatusiak.travelagency.domain.amadeus.flight.FlightOffer;
 import com.fmatusiak.travelagency.mapper.amadeus.flight.FlightOfferMapper;
 import com.fmatusiak.travelagency.service.amadeus.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,16 +20,16 @@ public class FlightController {
     @Autowired
     private FlightOfferMapper flightOfferMapper;
 
-    @GetMapping(value = "getTravelClass")
+    @GetMapping(value = "travelclass")
     public List<TravelClass> getTravelClass(){
         return flightService.getTravelClass();
     }
 
-    @GetMapping(value = "flightsbydate")
+    @GetMapping(value = "flightsbydate/{originPlace}/{destinationPlace}/{date}")
     public List<FlightOffer> findFlightsByDate(
-            @RequestParam String originPlace
-            , @RequestParam String destinationPlace
-            , @RequestParam String date) throws ResponseException {
+            @PathVariable String originPlace
+            ,@PathVariable String destinationPlace
+            ,@PathVariable String date) throws ResponseException {
         return flightOfferMapper.FlightOfferAmadeusTabToFlightOfferListMapper(
                 flightService.findFlightsByDate(originPlace, destinationPlace, date));
     }

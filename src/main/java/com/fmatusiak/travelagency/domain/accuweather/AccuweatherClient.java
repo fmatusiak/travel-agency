@@ -20,7 +20,7 @@ public class AccuweatherClient {
     @Autowired
     private AccuweatherConfig accuweatherConfig;
 
-    public List<City> getFindedCities(String cityName) {
+    public List<City> getCitiesByCityName(String cityName) {
         URI uri = UriComponentsBuilder
                 .fromHttpUrl(accuweatherConfig.getEndpointLocationsCities())
                 .queryParam("apikey", accuweatherConfig.getKey())
@@ -29,7 +29,7 @@ public class AccuweatherClient {
         return Arrays.asList(Optional.ofNullable(restTemplate.getForObject(uri, City[].class)).orElse(new City[0]));
     }
 
-    public DailyForecasts getCheckWeatherByCityKey(int cityKey) {
+    public DailyForecasts getWeatherByCityKey(int cityKey) {
         URI uri = UriComponentsBuilder
                 .fromHttpUrl(accuweatherConfig.getEndpointForecasts() + cityKey)
                 .queryParam("apikey", accuweatherConfig.getKey())
@@ -44,6 +44,5 @@ public class AccuweatherClient {
                 .build().encode().toUri();
         return Arrays.asList(Optional.ofNullable(restTemplate.getForObject(uri, City[].class)).orElse(new City[0]));
     }
-
 
 }

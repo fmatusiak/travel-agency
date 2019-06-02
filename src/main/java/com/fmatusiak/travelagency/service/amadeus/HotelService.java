@@ -1,6 +1,5 @@
 package com.fmatusiak.travelagency.service.amadeus;
 
-import com.amadeus.Params;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
 import com.fmatusiak.travelagency.domain.amadeus.AmadeusClient;
@@ -12,15 +11,11 @@ public class HotelService {
     private AmadeusClient amadeusClient;
 
     public HotelOffer[] getListHotelOfferByCityCode(String cityCode) throws ResponseException {
-        return amadeusClient.getBuildAmadeus()
-                .shopping.hotelOffers
-                .get(Params.with("cityCode", cityCode));
+        return amadeusClient.getListHotelOfferByCityCode(cityCode);
     }
 
     public HotelOffer getHotelOfferByHotelId(String hotelId) throws ResponseException {
-        return amadeusClient.getBuildAmadeus()
-                .shopping.hotelOffersByHotel
-                .get(Params.with("hotelId", hotelId));
+        return amadeusClient.getHotelOfferByHotelId(hotelId);
     }
 
 }

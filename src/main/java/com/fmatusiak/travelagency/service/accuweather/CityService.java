@@ -13,8 +13,8 @@ public class CityService {
     @Autowired
     private AccuweatherClient accuweatherClient;
 
-    public List<City> getFindedCities(String cityName) {
-        return accuweatherClient.getFindedCities(cityName);
+    public List<City> getCitiesByCityName(String cityName) {
+        return accuweatherClient.getCitiesByCityName(cityName);
     }
 
     public List<City> getTopCities(int numberCities) {

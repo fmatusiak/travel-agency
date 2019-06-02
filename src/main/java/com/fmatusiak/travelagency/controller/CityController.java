@@ -13,13 +13,13 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @GetMapping(value = "findedcities")
-    public List<City> getFindedCities(@RequestBody String cityName) {
-        return cityService.getFindedCities(cityName);
+    @GetMapping(value = "cities/{cityName}")
+    public List<City> getFindedCities(@PathVariable String cityName) {
+        return cityService.getCitiesByCityName(cityName);
     }
 
-    @GetMapping(value = "topcities")
-    public List<City> getTopCities(@RequestParam int citiesNumber) {
+    @GetMapping(value = "topcities/{citiesNumber}")
+    public List<City> getTopCities(@PathVariable int citiesNumber) {
         return cityService.getTopCities(citiesNumber);
     }
 }
