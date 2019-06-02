@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FlightsService {
+public class FlightService {
 
     @Autowired
     RestTemplate restTemplate;
