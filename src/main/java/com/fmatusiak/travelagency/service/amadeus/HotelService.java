@@ -4,13 +4,18 @@ import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
 import com.fmatusiak.travelagency.domain.amadeus.AmadeusClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+@Transactional
+@Service
 public class HotelService {
 
     @Autowired
     private AmadeusClient amadeusClient;
 
-    public HotelOffer[] getListHotelOfferByCityCode(String cityCode) throws ResponseException {
+    public HotelOffer[] getHotelOfferListByCityCode(String cityCode) throws ResponseException {
         return amadeusClient.getListHotelOfferByCityCode(cityCode);
     }
 

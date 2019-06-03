@@ -20,7 +20,7 @@ public class DailyForecasts {
 
     static class Weather {
         @JsonProperty("Date")
-        private List<String> date;
+        private String date;
 
         @JsonProperty("Temperature")
         private List<Temperature> temperature;
