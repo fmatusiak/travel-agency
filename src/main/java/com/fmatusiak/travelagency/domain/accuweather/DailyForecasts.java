@@ -16,14 +16,14 @@ import java.util.List;
 public class DailyForecasts {
 
     @JsonProperty("DailyForecasts")
-    private Weather weather;
+    private List<Weather> weather;
 
     static class Weather {
         @JsonProperty("Date")
         private String date;
 
         @JsonProperty("Temperature")
-        private List<Temperature> temperature;
+        private Temperature temperature;
     }
 
     static class Temperature {
