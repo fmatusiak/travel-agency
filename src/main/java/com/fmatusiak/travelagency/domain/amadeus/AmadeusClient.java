@@ -9,6 +9,7 @@ import com.amadeus.resources.HotelOffer;
 import com.amadeus.resources.Location;
 import com.fmatusiak.travelagency.config.amadeus.AmadeusConfig;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
+import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -44,9 +45,7 @@ public class AmadeusClient {
     }
 
     public HotelOffer[] getListHotelOfferByCityCode(String cityCode) throws ResponseException {
-        return getBuildAmadeus()
-                .shopping.hotelOffers
-                .get(Params.with("cityCode", cityCode));
+        return getBuildAmadeus().shopping.hotelOffers.get(Params.with("cityCode", cityCode));
     }
 
     public HotelOffer getHotelOfferByHotelId(String hotelId) throws ResponseException {
@@ -64,11 +63,15 @@ public class AmadeusClient {
         return travelClassList;
     }
 
-    public FlightOffer[] findFlightsByDate(String originPlace, String destinationPlace, String date) throws ResponseException {
+    public FlightOffer[] findFlightsByDate(FlightPersonalize flightPersonalize) throws ResponseException {
         return getBuildAmadeus().shopping.flightOffers.get(Params
-                .with("origin", originPlace)
-                .and("destination", destinationPlace)
-                .and("departureDate", date));
+                .with("origin", flightPersonalize.getOriginPlace())
+                .and("destination", flightPersonalize.getDestinationPlace())
+                .and("departureDate", flightPersonalize.getDepartureDate())
+                .and("adults", flightPersonalize.getAdultsQuantity())
+                .and("children", flightPersonalize.getChildrenQuantity())
+                .and("seniors", flightPersonalize.getSeniorsQuantity())
+                .and("travelClass", flightPersonalize.getTravelClass()));
     }
 
 }

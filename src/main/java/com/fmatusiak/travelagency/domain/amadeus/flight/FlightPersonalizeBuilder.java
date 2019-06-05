@@ -5,7 +5,7 @@ public class FlightPersonalizeBuilder {
     private String destinationPlace;
     private String departureDate;
     private String returnDate;
-    private int adultsQuantity;
+    private int adultsQuantity = 1;
     private int childrenQuantity;
     private int seniorsQuantity;
     private String travelClass;
@@ -51,6 +51,9 @@ public class FlightPersonalizeBuilder {
     }
 
     public FlightPersonalize createFlightPersonalize() {
+        if (adultsQuantity == 0) {
+            this.adultsQuantity = 1;
+        }
         return new FlightPersonalize(originPlace, destinationPlace, departureDate, returnDate
                 , adultsQuantity, childrenQuantity, seniorsQuantity, travelClass);
     }

@@ -4,6 +4,7 @@ import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOffer;
 import com.fmatusiak.travelagency.domain.amadeus.AmadeusClient;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
+import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -25,8 +26,8 @@ public class FlightService {
         return amadeusClient.getTravelClass();
     }
 
-    public FlightOffer[] findFlightsByDate(String originPlace, String destinationPlace, String date) throws ResponseException {
-        return amadeusClient.findFlightsByDate(originPlace, destinationPlace, date);
+    public FlightOffer[] findFlightsByDate(FlightPersonalize flightPersonalize) throws ResponseException {
+        return amadeusClient.findFlightsByDate(flightPersonalize);
     }
 
 }
