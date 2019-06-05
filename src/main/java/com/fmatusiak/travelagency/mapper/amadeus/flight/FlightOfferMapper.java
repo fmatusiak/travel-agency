@@ -1,6 +1,6 @@
 package com.fmatusiak.travelagency.mapper.amadeus.flight;
 
-import com.fmatusiak.travelagency.domain.amadeus.flight.FlightOffer;
+import com.fmatusiak.travelagency.domain.amadeus.flight.*;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
@@ -20,19 +20,12 @@ public class FlightOfferMapper {
                 for (com.amadeus.resources.FlightOffer.Service service : offerItem.getServices()) {
 
                     for (com.amadeus.resources.FlightOffer.Segment segment : service.getSegments()) {
-                        FlightOffer offer = new FlightOffer(
-                                new FlightOffer.Departure(
-                                        segment.getFlightSegment().getDeparture().getIataCode()
-                                        , segment.getFlightSegment().getDeparture().getAt())
-
-                                , new FlightOffer.Arrival(
+                        FlightOffer offer = new FlightOfferBuilder().setDeparture(new FlightDeparture(
+                                segment.getFlightSegment().getDeparture().getIataCode()
+                                , segment.getFlightSegment().getDeparture().getAt())).setArrival(new FlightArrival(
                                 segment.getFlightSegment().getArrival().getIataCode()
-                                , segment.getFlightSegment().getArrival().getIataCode()),
-
-                                new FlightOffer.PricingDetailPerAdult(segment.getPricingDetailPerAdult().getTravelClass()
-                                        , segment.getPricingDetailPerAdult().getAvailability()),
-
-                                new FlightOffer.Price(offerItem.getPrice().getTotal()));
+                                , segment.getFlightSegment().getArrival().getIataCode())).setPricingDetailPerAdult(new FlightPriceDetailPerAdult(segment.getPricingDetailPerAdult().getTravelClass()
+                                , segment.getPricingDetailPerAdult().getAvailability())).setPrice(new FlightPrice(offerItem.getPrice().getTotal())).createFlightOffer();
                         flightOfferList.add(offer);
                     }
                 }

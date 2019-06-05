@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Location {
-    private LocationData data;
-    private LocationAddress address;
+public class LocationData {
+    private String name;
+    private String detailedName;
+    private String iataCode;
 }
