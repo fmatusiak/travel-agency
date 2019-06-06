@@ -3,7 +3,10 @@ package com.fmatusiak.travelagency.controller;
 import com.fmatusiak.travelagency.domain.accuweather.City;
 import com.fmatusiak.travelagency.service.accuweather.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -12,11 +15,6 @@ import java.util.List;
 public class CityController {
     @Autowired
     private CityService cityService;
-
-    @GetMapping(value = "cities/{cityName}")
-    public List<City> getFindedCities(@PathVariable String cityName) {
-        return cityService.getCitiesByCityName(cityName);
-    }
 
     @GetMapping(value = "topcities/{citiesNumber}")
     public List<City> getTopCities(@PathVariable int citiesNumber) {

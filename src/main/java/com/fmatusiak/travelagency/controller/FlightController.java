@@ -2,7 +2,7 @@ package com.fmatusiak.travelagency.controller;
 
 import com.amadeus.exceptions.ResponseException;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
-import com.fmatusiak.travelagency.domain.amadeus.flight.FlightOffer;
+import com.fmatusiak.travelagency.domain.amadeus.flight.Flight;
 import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalizeBuilder;
 import com.fmatusiak.travelagency.mapper.amadeus.flight.FlightOfferMapper;
 import com.fmatusiak.travelagency.service.amadeus.FlightService;
@@ -31,7 +31,7 @@ public class FlightController {
 
     @GetMapping(value = "flightsbydate/{originPlace}/{destinationPlace}" +
             "/{date}/{adults}/{children}/{seniors}/{travelClass}")
-    public List<FlightOffer> findFlightsByDate(
+    public List<Flight> findFlightsByDate(
             @PathVariable String originPlace
             , @PathVariable String destinationPlace
             , @PathVariable String date

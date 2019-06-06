@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class Hotel {
+public class HotelProperty {
     private String hotelId;
     private String chainCode;
     private String name;

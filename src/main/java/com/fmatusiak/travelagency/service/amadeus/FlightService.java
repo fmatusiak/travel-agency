@@ -2,7 +2,7 @@ package com.fmatusiak.travelagency.service.amadeus;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOffer;
-import com.fmatusiak.travelagency.domain.amadeus.AmadeusClient;
+import com.fmatusiak.travelagency.client.amadeus.AmadeusFlightClient;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
 import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,14 @@ public class FlightService {
     RestTemplate restTemplate;
 
     @Autowired
-    private AmadeusClient amadeusClient;
+    private AmadeusFlightClient amadeusFlightClient;
 
     public List<TravelClass> getTravelClass(){
-        return amadeusClient.getTravelClass();
+        return amadeusFlightClient.getTravelClass();
     }
 
     public FlightOffer[] findFlightsByDate(FlightPersonalize flightPersonalize) throws ResponseException {
-        return amadeusClient.findFlightsByDate(flightPersonalize);
+        return amadeusFlightClient.findFlightsByDate(flightPersonalize);
     }
 
 }

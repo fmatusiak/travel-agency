@@ -1,6 +1,6 @@
 package com.fmatusiak.travelagency.service.accuweather;
 
-import com.fmatusiak.travelagency.domain.accuweather.AccuweatherClient;
+import com.fmatusiak.travelagency.client.accuweather.AccuweatherWeatherClient;
 import com.fmatusiak.travelagency.domain.accuweather.City;
 import com.fmatusiak.travelagency.domain.accuweather.DailyForecasts;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +14,14 @@ import java.util.List;
 public class WeatherService {
 
     @Autowired
-    private AccuweatherClient accuweatherClient;
+    private AccuweatherWeatherClient accuweatherWeatherClient;
 
     public DailyForecasts getWeatherByCityKey(int cityKey) {
-        return accuweatherClient.getWeatherByCityKey(cityKey);
+        return accuweatherWeatherClient.getWeatherByCityKey(cityKey);
     }
 
     public List<City> getCitiesByCityName(String cityName) {
-        return accuweatherClient.getCitiesByCityName(cityName);
+        return accuweatherWeatherClient.getCitiesByCityName(cityName);
     }
-
 
 }

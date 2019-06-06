@@ -1,5 +1,6 @@
 package com.fmatusiak.travelagency.mapper.amadeus.flight;
 
+import com.amadeus.resources.FlightOffer;
 import com.fmatusiak.travelagency.domain.amadeus.flight.*;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
@@ -11,29 +12,32 @@ import java.util.List;
 @Component
 public class FlightOfferMapper {
 
-    public List<FlightOffer> FlightOfferAmadeusTabToFlightOfferListMapper(com.amadeus.resources.FlightOffer[] flightOfferTab) {
-        List<FlightOffer> flightOfferList = new ArrayList<>();
-        for (com.amadeus.resources.FlightOffer flightOffer : flightOfferTab) {
-
-            for (com.amadeus.resources.FlightOffer.OfferItem offerItem : flightOffer.getOfferItems()) {
-
-                for (com.amadeus.resources.FlightOffer.Service service : offerItem.getServices()) {
-
-                    for (com.amadeus.resources.FlightOffer.Segment segment : service.getSegments()) {
-                        FlightOffer offer = new FlightOfferBuilder().setDeparture(new FlightDeparture(
+    public List<Flight> FlightOfferAmadeusTabToFlightOfferListMapper(final FlightOffer[] flightOffers) {
+        List<Flight> flightList = new ArrayList<>();
+        for (FlightOffer flightOffer : flightOffers) {
+            for (FlightOffer.OfferItem offerItem : flightOffer.getOfferItems()) {
+                for (FlightOffer.Service service : offerItem.getServices()) {
+                    for (FlightOffer.Segment segment : service.getSegments()) {
+                        Flight offer = new FlightBuilder().setDeparture(
+                                new FlightDeparture(
                                 segment.getFlightSegment().getDeparture().getIataCode()
-                                , segment.getFlightSegment().getDeparture().getAt())).setArrival(new FlightArrival(
+                                        , segment.getFlightSegment().getDeparture().getAt())).setArrival(
+                                new FlightArrival(
                                 segment.getFlightSegment().getArrival().getIataCode()
-                                , segment.getFlightSegment().getArrival().getIataCode())).setPricingDetailPerAdult(new FlightPriceDetailPerAdult(segment.getPricingDetailPerAdult().getTravelClass()
-                                , segment.getPricingDetailPerAdult().getAvailability())).setPrice(new FlightPrice(offerItem.getPrice().getTotal())).createFlightOffer();
-                        flightOfferList.add(offer);
+                                        , segment.getFlightSegment().getArrival().getIataCode())).setPricingDetailPerAdult(
+                                new FlightPriceDetailPerAdult(
+                                        segment.getPricingDetailPerAdult().getTravelClass()
+                                        , segment.getPricingDetailPerAdult().getAvailability())).setPrice(
+                                new FlightPrice(offerItem.getPrice().getTotal())).createFlightOffer();
+                        flightList.add(offer);
                     }
                 }
             }
         }
-        return flightOfferList;
+        return flightList;
     }
 
 }
+
 
 

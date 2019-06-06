@@ -16,13 +16,8 @@ public class LocationMapper {
         List<Location> locationList = new ArrayList<>();
         for (com.amadeus.resources.Location location1 : amadeusLocation) {
             locationList.add(new Location(
-                    new LocationData(
-                            location1.getName()
-                            , location1.getDetailedName()
-                            , location1.getIataCode())
-                    , new LocationAddress(
-                    location1.getAddress().getCityName()
-                    , location1.getAddress().getCityCode()
+                    new LocationData(location1.getName(), location1.getDetailedName(), location1.getIataCode())
+                    , new LocationAddress(location1.getAddress().getCityName(), location1.getAddress().getCityCode()
                     , location1.getAddress().getCountryName())));
         }
         return locationList;

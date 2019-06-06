@@ -2,6 +2,7 @@ package com.fmatusiak.travelagency.controller;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
+import com.fmatusiak.travelagency.domain.amadeus.hotel.HotelPersonalizeBuilder;
 import com.fmatusiak.travelagency.service.amadeus.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,17 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
-    @GetMapping(value = "/hotelofferlistbycitycode/{cityCode}")
-    public HotelOffer[] getHotelOfferListByCityCode(@PathVariable String cityCode) throws ResponseException {
-        return hotelService.getHotelOfferListByCityCode(cityCode);
+    @GetMapping(value = "/hotelofferlist/{cityCode}/{checkInDate}/{checkOutDate}/{roomQuantity}/{adults}")
+    public HotelOffer[] getHotelOfferListByCityCode(@PathVariable String cityCode, @PathVariable String checkInDate
+            , @PathVariable String checkOutDate, @PathVariable int roomQuantity
+            , @PathVariable int adults) throws ResponseException {
+        return hotelService.getHotelOfferListByCityCode(new HotelPersonalizeBuilder()
+                .setCityCode(cityCode)
+                .setCheckInDate(checkInDate)
+                .setCheckOutDate(checkOutDate)
+                .setRoomQuantity(roomQuantity)
+                .setAdults(adults)
+                .createHotelPersonalize());
     }
 
     @GetMapping(value = "hotelofferbyhotelid/{hotelId}")

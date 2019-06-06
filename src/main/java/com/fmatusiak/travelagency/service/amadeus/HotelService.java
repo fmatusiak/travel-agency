@@ -2,7 +2,8 @@ package com.fmatusiak.travelagency.service.amadeus;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
-import com.fmatusiak.travelagency.domain.amadeus.AmadeusClient;
+import com.fmatusiak.travelagency.client.amadeus.AmadeusHotelClient;
+import com.fmatusiak.travelagency.domain.amadeus.hotel.HotelPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,14 +14,14 @@ import javax.transaction.Transactional;
 public class HotelService {
 
     @Autowired
-    private AmadeusClient amadeusClient;
+    private AmadeusHotelClient amadeusHotelClient;
 
-    public HotelOffer[] getHotelOfferListByCityCode(String cityCode) throws ResponseException {
-        return amadeusClient.getListHotelOfferByCityCode(cityCode);
+    public HotelOffer[] getHotelOfferListByCityCode(HotelPersonalize hotelPersonalize) throws ResponseException {
+        return amadeusHotelClient.getListHotelOfferByCityCode(hotelPersonalize);
     }
 
     public HotelOffer getHotelOfferByHotelId(String hotelId) throws ResponseException {
-        return amadeusClient.getHotelOfferByHotelId(hotelId);
+        return amadeusHotelClient.getHotelOfferByHotelId(hotelId);
     }
 
 }

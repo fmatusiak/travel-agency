@@ -1,15 +1,15 @@
 package com.fmatusiak.travelagency.domain.amadeus.hotel;
 
 public class HotelOffer {
-    private Hotel hotel;
+    private HotelProperty hotelProperty;
     private HotelAddress hotelAddress;
     private HotelContact hotelContact;
     private HotelAmentities hotelAmentities;
     private HotelRoom hotelRoom;
     private HotelGuests hotelGuests;
 
-    public HotelOffer(Hotel hotel, HotelAddress hotelAddress, HotelContact hotelContact, HotelAmentities hotelAmentities, HotelRoom hotelRoom, HotelGuests hotelGuests) {
-        this.hotel = hotel;
+    public HotelOffer(HotelProperty hotelProperty, HotelAddress hotelAddress, HotelContact hotelContact, HotelAmentities hotelAmentities, HotelRoom hotelRoom, HotelGuests hotelGuests) {
+        this.hotelProperty = hotelProperty;
         this.hotelAddress = hotelAddress;
         this.hotelContact = hotelContact;
         this.hotelAmentities = hotelAmentities;
