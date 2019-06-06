@@ -44,10 +44,11 @@ public class FlightController {
                         new FlightPersonalizeBuilder()
                                 .setOriginPlace(originPlace)
                                 .setDestinationPlace(destinationPlace)
-                                .setDepartureDate(date).setAdultsQuantity(adults)
-                                .setChildrenQuantity(children).setSeniorsQuantity(seniors)
-                                .setTravelClass(travelClass).createFlightPersonalize()));
+                                .setDepartureDate(date)
+                                .setAdultsQuantity(adults)
+                                .setChildrenQuantity(children)
+                                .setSeniorsQuantity(seniors)
+                                .setTravelClass(travelClass)
+                                .createFlightPersonalize()));
     }
-
-
 }
