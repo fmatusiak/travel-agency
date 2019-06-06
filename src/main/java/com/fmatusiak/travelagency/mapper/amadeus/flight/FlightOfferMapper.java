@@ -28,7 +28,7 @@ public class FlightOfferMapper {
                                 new FlightPriceDetailPerAdult(
                                         segment.getPricingDetailPerAdult().getTravelClass()
                                         , segment.getPricingDetailPerAdult().getAvailability())).setPrice(
-                                new FlightPrice(offerItem.getPrice().getTotal())).createFlightOffer();
+                                new FlightPrice(offerItem.getPrice().getTotal())).createFlight();
                         flightList.add(offer);
                     }
                 }

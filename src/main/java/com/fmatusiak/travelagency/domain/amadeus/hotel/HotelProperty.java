@@ -11,6 +11,6 @@ public class HotelProperty {
     private String hotelId;
     private String chainCode;
     private String name;
-    private String rating;
+    private int rating;
     private String cityCode;
 }

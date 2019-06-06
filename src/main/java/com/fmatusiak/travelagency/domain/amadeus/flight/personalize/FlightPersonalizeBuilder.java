@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.domain.amadeus.flight;
+package com.fmatusiak.travelagency.domain.amadeus.flight.personalize;
 
 public class FlightPersonalizeBuilder {
     private String originPlace;

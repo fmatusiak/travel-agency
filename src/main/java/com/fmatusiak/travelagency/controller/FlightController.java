@@ -3,7 +3,7 @@ package com.fmatusiak.travelagency.controller;
 import com.amadeus.exceptions.ResponseException;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
 import com.fmatusiak.travelagency.domain.amadeus.flight.Flight;
-import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalizeBuilder;
+import com.fmatusiak.travelagency.domain.amadeus.flight.personalize.FlightPersonalizeBuilder;
 import com.fmatusiak.travelagency.mapper.amadeus.flight.FlightOfferMapper;
 import com.fmatusiak.travelagency.service.amadeus.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;

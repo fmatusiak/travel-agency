@@ -4,7 +4,7 @@ import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOffer;
 import com.fmatusiak.travelagency.client.amadeus.AmadeusFlightClient;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
-import com.fmatusiak.travelagency.domain.amadeus.flight.FlightPersonalize;
+import com.fmatusiak.travelagency.domain.amadeus.flight.personalize.FlightPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

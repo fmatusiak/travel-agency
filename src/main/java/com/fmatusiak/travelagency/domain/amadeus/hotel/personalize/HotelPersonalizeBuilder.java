@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.domain.amadeus.hotel;
+package com.fmatusiak.travelagency.domain.amadeus.hotel.personalize;
 
 public class HotelPersonalizeBuilder {
     private String cityCode;
@@ -33,6 +33,12 @@ public class HotelPersonalizeBuilder {
     }
 
     public HotelPersonalize createHotelPersonalize() {
+        if (roomQuantity <= 0) {
+            roomQuantity = 1;
+        }
+        if (adults <= 0) {
+            adults = 1;
+        }
         return new HotelPersonalize(cityCode, checkInDate, checkOutDate, roomQuantity, adults);
     }
 }

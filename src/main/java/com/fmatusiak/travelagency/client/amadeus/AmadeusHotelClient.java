@@ -3,7 +3,7 @@ package com.fmatusiak.travelagency.client.amadeus;
 import com.amadeus.Params;
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
-import com.fmatusiak.travelagency.domain.amadeus.hotel.HotelPersonalize;
+import com.fmatusiak.travelagency.domain.amadeus.hotel.personalize.HotelPersonalize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

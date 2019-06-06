@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.domain.amadeus.flight;
+package com.fmatusiak.travelagency.domain.amadeus.flight.personalize;
 
 import lombok.Getter;
 
