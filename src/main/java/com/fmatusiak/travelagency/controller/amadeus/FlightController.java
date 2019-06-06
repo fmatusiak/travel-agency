@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.controller;
+package com.fmatusiak.travelagency.controller.amadeus;
 
 import com.amadeus.exceptions.ResponseException;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;

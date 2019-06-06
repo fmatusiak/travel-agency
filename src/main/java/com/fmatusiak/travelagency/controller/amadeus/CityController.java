@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.controller;
+package com.fmatusiak.travelagency.controller.amadeus;
 
 import com.fmatusiak.travelagency.domain.accuweather.City;
 import com.fmatusiak.travelagency.service.accuweather.CityService;
