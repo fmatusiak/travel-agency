@@ -1,7 +1,7 @@
 package com.fmatusiak.travelagency.controller.amadeus;
 
 import com.amadeus.exceptions.ResponseException;
-import com.fmatusiak.travelagency.domain.amadeus.location.Location;
+import com.fmatusiak.travelagency.domain.amadeus.location.LocationScore;
 import com.fmatusiak.travelagency.mapper.amadeus.location.LocationMapper;
 import com.fmatusiak.travelagency.service.amadeus.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +23,12 @@ public class LocationController {
     private LocationMapper locationMapper;
 
     @GetMapping(value = "/citylistsearch/{keyword}")
-    public List<Location> getFindCityListSearchByKeyword(@PathVariable String keyword) throws ResponseException {
+    public List<LocationScore> getFindCityListSearchByKeyword(@PathVariable String keyword) throws ResponseException {
         return locationMapper.amadeusLocationTabToLocationList(locationService.getFindCityListSearchByKeyword(keyword));
     }
 
     @GetMapping(value = "/airpotlistserach/{keyword}")
-    public List<Location> getFindAirportListSearchByKeyword(@PathVariable String keyword) throws ResponseException {
+    public List<LocationScore> getFindAirportListSearchByKeyword(@PathVariable String keyword) throws ResponseException {
         return locationMapper.amadeusLocationTabToLocationList(locationService.getFindAirportListSearchByKeyword(keyword));
     }
 
