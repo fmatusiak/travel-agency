@@ -21,6 +21,7 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
+    @Autowired
     private HotelOfferMapper hotelOfferMapper;
 
     @GetMapping(value = "/hotelofferlist/{cityCode}/{checkInDate}/{checkOutDate}/{roomQuantity}/{adults}")
