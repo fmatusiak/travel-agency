@@ -26,7 +26,7 @@ public class HotelBuilder {
         return this;
     }
 
-    public Hotel createHotel() {
-        return new Hotel(hotelProperty, hotelAddress, hotelContact, hotelAmentities);
+    public HotelScore createHotel() {
+        return new HotelScore(hotelProperty, hotelAddress, hotelContact, hotelAmentities);
     }
 }

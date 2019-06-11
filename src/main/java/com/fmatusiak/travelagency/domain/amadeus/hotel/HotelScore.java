@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Hotel {
+public class HotelScore {
     private HotelProperty hotelProperty;
     private HotelAddress hotelAddress;
     private HotelContact hotelContact;

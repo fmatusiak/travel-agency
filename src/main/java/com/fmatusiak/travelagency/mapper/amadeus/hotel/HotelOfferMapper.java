@@ -12,10 +12,10 @@ import java.util.List;
 @Component
 public class HotelOfferMapper {
 
-    public List<Hotel> hoteloffersTabToHotelList(final HotelOffer[] hotelOffers) throws ResponseException {
-        ArrayList<Hotel> hotels = new ArrayList<>();
+    public List<HotelScore> hoteloffersTabToHotelList(final HotelOffer[] hotelOffers) throws ResponseException {
+        ArrayList<HotelScore> hotelScores = new ArrayList<>();
         for (HotelOffer hotelOffer : hotelOffers) {
-            Hotel hotel = new HotelBuilder()
+            HotelScore hotelScore = new HotelBuilder()
                     .setHotelAddress(new HotelAddress(hotelOffer.getHotel().getAddress().getCityName()
                             , hotelOffer.getHotel().getAddress().getCountryCode()))
                     .setHotelAmentities(new HotelAmentities(Arrays.asList(hotelOffer.getHotel().getAmenities())))
@@ -28,9 +28,9 @@ public class HotelOfferMapper {
                             , hotelOffer.getHotel().getRating()
                             , hotelOffer.getHotel().getCityCode()))
                     .createHotel();
-            hotels.add(hotel);
+            hotelScores.add(hotelScore);
         }
-        return hotels;
+        return hotelScores;
     }
 
 }

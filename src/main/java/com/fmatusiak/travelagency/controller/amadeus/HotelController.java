@@ -2,7 +2,7 @@ package com.fmatusiak.travelagency.controller.amadeus;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.HotelOffer;
-import com.fmatusiak.travelagency.domain.amadeus.hotel.Hotel;
+import com.fmatusiak.travelagency.domain.amadeus.hotel.HotelScore;
 import com.fmatusiak.travelagency.domain.amadeus.hotel.personalize.HotelPersonalizeBuilder;
 import com.fmatusiak.travelagency.mapper.amadeus.hotel.HotelOfferMapper;
 import com.fmatusiak.travelagency.service.amadeus.HotelService;
@@ -25,7 +25,7 @@ public class HotelController {
     private HotelOfferMapper hotelOfferMapper;
 
     @GetMapping(value = "/hotelofferlist/{cityCode}/{checkInDate}/{checkOutDate}/{roomQuantity}/{adults}")
-    public List<Hotel> getHotelOfferList(
+    public List<HotelScore> getHotelOfferList(
             @PathVariable String cityCode, @PathVariable String checkInDate
             , @PathVariable String checkOutDate, @PathVariable int roomQuantity
             , @PathVariable int adults) throws ResponseException {
