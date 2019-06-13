@@ -10,20 +10,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HotelAddress")
+@Table(name = "HOTEL_ADDRESS")
 public class HotelAddressEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "cityName")
-    String cityName;
+    private String cityName;
 
     @Column(name = "countryCode")
-    String countryCode;
+    private String countryCode;
 
-    @OneToOne(mappedBy = "hotelAddressEntity")
-    HotelEntity hotelEntity;
+    @OneToOne
+    private HotelEntity hotelEntity;
 }

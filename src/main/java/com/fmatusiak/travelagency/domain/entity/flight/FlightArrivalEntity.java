@@ -10,20 +10,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "FlightArrival")
+@Table(name = "FLIGHT_ARRIVAL")
 public class FlightArrivalEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "iataCode")
-    String iataCode;
+    private String iataCode;
 
     @Column(name = "at")
-    String at;
+    private String at;
 
-    @OneToOne(mappedBy = "flightArrivalEntity")
-    FlightEntity flightEntity;
+    @OneToOne
+    private FlightEntity flightEntity;
 }

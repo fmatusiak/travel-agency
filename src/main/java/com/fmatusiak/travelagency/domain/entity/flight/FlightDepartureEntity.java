@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "FlightDeparture")
+@Table(name = "FLIGHT_DEPARTURE")
 public class FlightDepartureEntity {
 
     @Id
@@ -24,6 +24,6 @@ public class FlightDepartureEntity {
     @Column(name = "at")
     String at;
 
-    @OneToOne(mappedBy = "flightDepartureEntity", targetEntity = FlightEntity.class)
-    FlightEntity flightEntity;
+    @OneToOne
+    private FlightEntity flightEntity;
 }

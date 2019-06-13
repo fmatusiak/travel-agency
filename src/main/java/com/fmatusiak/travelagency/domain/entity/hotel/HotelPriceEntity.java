@@ -10,17 +10,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HotelPrice")
+@Table(name = "HOTEL_PRICE")
 public class HotelPriceEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "currency")
-    String currency;
+    private String currency;
 
-    @Column(name = "currency")
-    String total;
+    @Column(name = "total")
+    private String total;
 }

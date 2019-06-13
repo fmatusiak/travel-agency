@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "FlightPriceDetailPerAdult")
+@Table(name = "FLIGHT_PRICE_DETAIL_PER_ADULT")
 public class FlightPriceDetailPerAdultEntity {
 
     @Id
@@ -24,6 +24,6 @@ public class FlightPriceDetailPerAdultEntity {
     @Column(name = "availabilityTickets")
     int availability;
 
-    @OneToOne(mappedBy = "flightPriceDetailPerAdultEntity")
-    FlightEntity flightEntity;
+    @OneToOne
+    private FlightEntity flightEntity;
 }

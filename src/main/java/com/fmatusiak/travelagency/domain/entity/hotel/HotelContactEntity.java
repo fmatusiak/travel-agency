@@ -10,20 +10,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HotelAmentities")
+@Table(name = "HOTEL_CONTACT")
 public class HotelContactEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
-
-    @OneToOne(mappedBy = "hotelContactEntity")
-    HotelEntity hotelEntity;
+    private int id;
 
     @Column(name = "phone")
     private String phone;
 
     @Column(name = "fax")
     private String fax;
+
+    @OneToOne
+    private HotelEntity hotelEntity;
 }

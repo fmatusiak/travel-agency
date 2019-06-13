@@ -10,26 +10,26 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Location")
+@Table(name = "LOCATION")
 public class LocationEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
-    @OneToOne(mappedBy = "locationEntity", targetEntity = LocationDataEntity.class)
     @JoinColumns({
-            @JoinColumn(name = "name", referencedColumnName = "name"),
-            @JoinColumn(name = "detailedName", referencedColumnName = "detailedName")
+            @JoinColumn(name = "location_name", referencedColumnName = "name"),
+            @JoinColumn(name = "location_detailedName", referencedColumnName = "detailedName")
     })
-    LocationDataEntity locationDataEntity;
+    @OneToOne(mappedBy = "locationEntity")
+    private LocationDataEntity locationDataEntity;
 
-    @OneToOne(mappedBy = "locationEntity", targetEntity = LocationAddressEntity.class)
     @JoinColumns({
             @JoinColumn(name = "city", referencedColumnName = "cityName"),
             @JoinColumn(name = "cityCode", referencedColumnName = "cityCode"),
             @JoinColumn(name = "country", referencedColumnName = "countryName")
     })
-    LocationAddressEntity locationAddressEntity;
+    @OneToOne(mappedBy = "locationEntity")
+    private LocationAddressEntity locationAddressEntity;
 }

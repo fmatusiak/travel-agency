@@ -10,23 +10,23 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "LocationData")
+@Table(name = "LOCATION_DATA")
 public class LocationDataEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "detailedName")
-    String detailedName;
+    private String detailedName;
 
     @Column(name = "iataCode")
-    String iataCode;
+    private String iataCode;
 
-    @OneToOne(mappedBy = "locationDataEntity")
-    LocationEntity locationEntity;
+    @OneToOne
+    private LocationEntity locationEntity;
 }

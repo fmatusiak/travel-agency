@@ -10,24 +10,23 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "City")
-public class City {
+@Table(name = "CITY")
+public class CityEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "key")
-    String key;
+    private String key;
 
     @Column(name = "localizedName")
-    String localizedName;
+    private String localizedName;
 
     @Column(name = "regionName")
-    String regionName;
+    private String regionName;
 
     @Column(name = "countryNane")
-    String countryNane;
-
+    private String countryNane;
 }

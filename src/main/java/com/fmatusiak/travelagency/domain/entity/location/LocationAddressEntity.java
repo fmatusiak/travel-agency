@@ -10,22 +10,22 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "LocationAddress")
+@Table(name = "LOCATION_ADDRESS")
 public class LocationAddressEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
     @Column(name = "cityName")
-    String cityName;
+    private String cityName;
 
     @Column(name = "cityCode")
-    String cityCode;
+    private String cityCode;
 
     @Column(name = "countryName")
-    String countryName;
+    private String countryName;
 
     @OneToOne
-    LocationEntity locationEntity;
+    private LocationEntity locationEntity;
 }
