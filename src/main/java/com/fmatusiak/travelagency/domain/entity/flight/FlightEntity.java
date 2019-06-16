@@ -10,30 +10,28 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "FLIGHT")
+@Table(name = "FLIGHTS")
 public class FlightEntity {
 
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private int id;
 
-    @JoinColumn(name = "iataCode_flight_arrival", referencedColumnName = "iataCode")
+    @JoinColumn(name = "id_flight_arrival", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")
-    FlightArrivalEntity flightArrivalEntity;
+    private FlightArrivalEntity flightArrivalEntity;
 
-    @JoinColumn(name = "iataCode_flight_departure", referencedColumnName = "iataCode")
+    @JoinColumn(name = "id_flight_departure", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")
-    FlightDepartureEntity flightDepartureEntity;
+    private FlightDepartureEntity flightDepartureEntity;
 
-    @JoinColumn(name = "flight_price", referencedColumnName = "price")
+    @JoinColumn(name = "id_flight_price", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")
-    FlightPriceEntity flightPriceEntity;
+    private FlightPriceEntity flightPriceEntity;
 
-    @JoinColumns({
-            @JoinColumn(name = "flight_travelClass", referencedColumnName = "travelClass"),
-            @JoinColumn(name = "flight_availabilityTickets", referencedColumnName = "availabilityTickets")
-    })
+
+    @JoinColumn(name = "id_flight_Price_Detail_Per_Adult_Entity", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")
-    FlightPriceDetailPerAdultEntity flightPriceDetailPerAdultEntity;
+    private FlightPriceDetailPerAdultEntity flightPriceDetailPerAdultEntity;
 }

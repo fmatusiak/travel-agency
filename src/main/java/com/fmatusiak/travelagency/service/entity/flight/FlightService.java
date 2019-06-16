@@ -1,4 +1,4 @@
-package com.fmatusiak.travelagency.service.amadeus;
+package com.fmatusiak.travelagency.service.entity.flight;
 
 import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOffer;

@@ -18,18 +18,11 @@ public class LocationEntity {
     @GeneratedValue
     private int id;
 
-    @JoinColumns({
-            @JoinColumn(name = "location_name", referencedColumnName = "name"),
-            @JoinColumn(name = "location_detailedName", referencedColumnName = "detailedName")
-    })
+    @JoinColumn(name = "id_location_data", referencedColumnName = "id")
     @OneToOne(mappedBy = "locationEntity")
     private LocationDataEntity locationDataEntity;
 
-    @JoinColumns({
-            @JoinColumn(name = "city", referencedColumnName = "cityName"),
-            @JoinColumn(name = "cityCode", referencedColumnName = "cityCode"),
-            @JoinColumn(name = "country", referencedColumnName = "countryName")
-    })
-    @OneToOne(mappedBy = "locationEntity")
+    @JoinColumn(name = "id_location_address", referencedColumnName = "id")
+    @OneToOne(mappedBy = "locationEntity", targetEntity = LocationAddressEntity.class)
     private LocationAddressEntity locationAddressEntity;
 }

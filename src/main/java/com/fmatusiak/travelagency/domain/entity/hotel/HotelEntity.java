@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "HOTEL")
+@Table(name = "HOTELS")
 public class HotelEntity {
 
     @Id
@@ -18,26 +18,17 @@ public class HotelEntity {
     @GeneratedValue
     private int id;
 
-    @JoinColumns({
-            @JoinColumn(name = "name", referencedColumnName = "name"),
-            @JoinColumn(name = "rating", referencedColumnName = "rating"),
-            @JoinColumn(name = "cityCode", referencedColumnName = "cityCode")
-    })
+    @JoinColumn(name = "id_ hotelProperty", referencedColumnName = "id")
     @OneToOne(mappedBy = "hotelEntity")
     private HotelPropertyEntity hotelPropertyEntity;
 
-    @JoinColumns({
-            @JoinColumn(name = "city", referencedColumnName = "cityName"),
-            @JoinColumn(name = "country", referencedColumnName = "countryCode")
-    })
+
+    @JoinColumn(name = "id_hotel_address", referencedColumnName = "id")
     @OneToOne(mappedBy = "hotelEntity")
     private HotelAddressEntity hotelAddressEntity;
 
-    @JoinColumns({
-            @JoinColumn(name = "phone", referencedColumnName = "phone"),
-            @JoinColumn(name = "fax", referencedColumnName = "fax")
-    })
 
+    @JoinColumn(name = "id_hotel_contact", referencedColumnName = "id")
     @OneToOne(mappedBy = "hotelEntity")
     private HotelContactEntity hotelContactEntity;
 }

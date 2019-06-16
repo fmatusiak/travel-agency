@@ -4,6 +4,7 @@ import com.amadeus.exceptions.ResponseException;
 import com.amadeus.resources.FlightOffer;
 import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
 import com.fmatusiak.travelagency.domain.amadeus.flight.personalize.FlightPersonalizeBuilder;
+import com.fmatusiak.travelagency.service.entity.flight.FlightService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

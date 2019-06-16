@@ -5,7 +5,7 @@ import com.fmatusiak.travelagency.domain.amadeus.enums.TravelClass;
 import com.fmatusiak.travelagency.domain.amadeus.flight.Flight;
 import com.fmatusiak.travelagency.domain.amadeus.flight.personalize.FlightPersonalizeBuilder;
 import com.fmatusiak.travelagency.mapper.amadeus.flight.FlightOfferMapper;
-import com.fmatusiak.travelagency.service.amadeus.FlightService;
+import com.fmatusiak.travelagency.service.entity.flight.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

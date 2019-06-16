@@ -10,8 +10,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "LOCATION_ADDRESS")
+@Table(name = "LOCATIONS_ADDRESSES")
 public class LocationAddressEntity {
+
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue

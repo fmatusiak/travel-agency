@@ -29,4 +29,8 @@ public class CityEntity {
 
     @Column(name = "countryNane")
     private String countryNane;
+
+    @OneToOne(mappedBy = "cityEntity", targetEntity = DailyForecastEntity.class)
+    @JoinColumn(name = "DAILY_FORECAST_ID")
+    private DailyForecastEntity dailyForecastEntity;
 }
