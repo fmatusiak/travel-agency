@@ -12,17 +12,17 @@ public class FlightArrivalEntityController {
 
     private FlightArrivalEntityService flightArrivalEntityService;
 
-    @PostMapping(name = "/addFlightArrival")
+    @PostMapping(value = "/addFlightArrival")
     public FlightArrivalEntity addflightArrival(@RequestBody FlightArrivalEntity flightArrivalEntity) {
         return flightArrivalEntityService.addFlightArrival(flightArrivalEntity);
     }
 
-    @GetMapping(name = "/getFlightArrival/{id}")
+    @GetMapping(value = "/getFlightArrival/{id}")
     public Optional<FlightArrivalEntity> getFlightArrivalById(@PathVariable long id) {
         return flightArrivalEntityService.getFlightArrivalById(id);
     }
 
-    @DeleteMapping(name = "/deleteFlightArrival/{id}")
+    @DeleteMapping(value = "/deleteFlightArrival/{id}")
     public void deleteFlightArrivalById(@PathVariable long id) {
         flightArrivalEntityService.deleteFlightArrivalById(id);
     }

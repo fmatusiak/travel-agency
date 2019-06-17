@@ -14,17 +14,17 @@ public class FlightDepartureEntityController {
     @Autowired
     private FlightDepartureEntityService flightDepartureEntityService;
 
-    @PostMapping(name = "addFlightDeparture")
+    @PostMapping(value = "addFlightDeparture")
     public FlightDepartureEntity addflightDeparture(@RequestBody FlightDepartureEntity flightDepartureEntity) {
         return flightDepartureEntityService.addFlightDeparture(flightDepartureEntity);
     }
 
-    @GetMapping(name = "getFlightDeparture/{id}")
+    @GetMapping(value = "getFlightDeparture/{id}")
     public Optional<FlightDepartureEntity> getflightDepartureById(@PathVariable long id) {
         return flightDepartureEntityService.getFlightDepartureById(id);
     }
 
-    @DeleteMapping(name = "deleteFlightDeparture/{id}")
+    @DeleteMapping(value = "deleteFlightDeparture/{id}")
     public void deleteflightDepartureById(@PathVariable long id) {
         flightDepartureEntityService.removeFlightDepartureById(id);
     }

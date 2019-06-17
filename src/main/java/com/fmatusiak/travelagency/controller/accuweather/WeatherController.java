@@ -18,12 +18,12 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @GetMapping(value = "weatherbycity/{cityKey}")
+    @GetMapping(value = "weatherByCity/{cityKey}")
     public DailyForecasts getWeatherByCityKey(@PathVariable int cityKey) {
         return weatherService.getWeatherByCityKey(cityKey);
     }
 
-    @GetMapping(value = "citiesbycityname/{cityName}")
+    @GetMapping(value = "citiesByCityName/{cityName}")
     public List<City> getCitiesByCityName(@PathVariable String cityName) {
         return weatherService.getCitiesByCityName(cityName);
     }
