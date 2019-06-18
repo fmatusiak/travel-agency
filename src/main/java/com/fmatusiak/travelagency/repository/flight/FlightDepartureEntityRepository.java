@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
+
 public interface FlightDepartureEntityRepository extends CrudRepository<FlightDepartureEntity, Long> {
 
     @Override

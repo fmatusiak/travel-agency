@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/v1/locationAddressEntity")
+@RequestMapping(value = "/v1/location")
 public class LocationAddressEntityController {
 
     @Autowired

@@ -16,7 +16,7 @@ public class FlightArrivalEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "iataCode")
     private String iataCode;

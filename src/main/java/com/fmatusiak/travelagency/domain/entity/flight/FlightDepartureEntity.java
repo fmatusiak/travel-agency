@@ -16,13 +16,13 @@ public class FlightDepartureEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private long id;
 
     @Column(name = "iataCode")
-    String iataCode;
+    private String iataCode;
 
     @Column(name = "at")
-    String at;
+    private String at;
 
     @OneToOne
     private FlightEntity flightEntity;

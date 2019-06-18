@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Transactional
 @Service
@@ -19,8 +18,8 @@ public class FlightArrivalEntityService {
         return flightArrivalEntityRepository.save(flightArrivalEntity);
     }
 
-    public Optional<FlightArrivalEntity> getFlightArrivalById(long id) {
-        return flightArrivalEntityRepository.findById(id);
+    public FlightArrivalEntity getFlightArrivalById(long id) {
+        return flightArrivalEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteFlightArrivalById(long id) {

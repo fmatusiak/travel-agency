@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/v1/flightPrice")
+@RequestMapping("/v1/flight")
 public class FlightPriceEntityController {
 
     @Autowired

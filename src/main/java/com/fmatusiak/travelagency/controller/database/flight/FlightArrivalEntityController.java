@@ -2,27 +2,27 @@ package com.fmatusiak.travelagency.controller.database.flight;
 
 import com.fmatusiak.travelagency.domain.entity.flight.FlightArrivalEntity;
 import com.fmatusiak.travelagency.service.entity.flight.FlightArrivalEntityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/v1/flightArrival")
+@RequestMapping("/v1/flight")
 public class FlightArrivalEntityController {
 
+    @Autowired
     private FlightArrivalEntityService flightArrivalEntityService;
 
-    @PostMapping(value = "/addFlightArrival")
+    @PostMapping(value = "addFlightArrival")
     public FlightArrivalEntity addflightArrival(@RequestBody FlightArrivalEntity flightArrivalEntity) {
         return flightArrivalEntityService.addFlightArrival(flightArrivalEntity);
     }
 
-    @GetMapping(value = "/getFlightArrival/{id}")
-    public Optional<FlightArrivalEntity> getFlightArrivalById(@PathVariable long id) {
+    @GetMapping(value = "getFlightArrival/{id}")
+    public FlightArrivalEntity getFlightArrivalById(@PathVariable long id) {
         return flightArrivalEntityService.getFlightArrivalById(id);
     }
 
-    @DeleteMapping(value = "/deleteFlightArrival/{id}")
+    @DeleteMapping(value = "deleteFlightArrival/{id}")
     public void deleteFlightArrivalById(@PathVariable long id) {
         flightArrivalEntityService.deleteFlightArrivalById(id);
     }

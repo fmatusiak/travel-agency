@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/v1/cityEntity")
+@RequestMapping(value = "/v1/city")
 public class CityEntityController {
 
     @Autowired

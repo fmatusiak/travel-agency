@@ -5,10 +5,8 @@ import com.fmatusiak.travelagency.service.entity.flight.FlightDepartureEntitySer
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
-@RequestMapping("/v1/flightDeparture")
+@RequestMapping("/v1/flight")
 public class FlightDepartureEntityController {
 
     @Autowired
@@ -20,12 +18,12 @@ public class FlightDepartureEntityController {
     }
 
     @GetMapping(value = "getFlightDeparture/{id}")
-    public Optional<FlightDepartureEntity> getflightDepartureById(@PathVariable long id) {
+    public FlightDepartureEntity getflightDepartureById(@PathVariable long id) {
         return flightDepartureEntityService.getFlightDepartureById(id);
     }
 
     @DeleteMapping(value = "deleteFlightDeparture/{id}")
     public void deleteflightDepartureById(@PathVariable long id) {
-        flightDepartureEntityService.removeFlightDepartureById(id);
+        flightDepartureEntityService.deleteFlightDepartureById(id);
     }
 }
