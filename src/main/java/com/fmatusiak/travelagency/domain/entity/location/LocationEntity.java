@@ -16,7 +16,7 @@ public class LocationEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @JoinColumn(name = "id_location_data", referencedColumnName = "id")
     @OneToOne(mappedBy = "locationEntity")

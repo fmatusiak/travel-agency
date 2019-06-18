@@ -16,7 +16,7 @@ public class HotelEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @JoinColumn(name = "id_ hotelProperty", referencedColumnName = "id")
     @OneToOne(mappedBy = "hotelEntity")

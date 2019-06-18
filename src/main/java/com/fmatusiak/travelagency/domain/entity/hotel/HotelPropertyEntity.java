@@ -16,7 +16,7 @@ public class HotelPropertyEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "hotelId")
     private String hotelId;

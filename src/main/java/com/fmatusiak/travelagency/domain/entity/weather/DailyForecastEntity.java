@@ -15,7 +15,7 @@ public class DailyForecastEntity {
 
     @Id
     @Column(name = "ID", unique = true)
-    private int id;
+    private long id;
 
     @Column(name = "DATE")
     private String date;

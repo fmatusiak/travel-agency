@@ -16,7 +16,7 @@ public class HotelContactEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "phone")
     private String phone;

@@ -16,7 +16,7 @@ public class FlightEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @JoinColumn(name = "id_flight_arrival", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")

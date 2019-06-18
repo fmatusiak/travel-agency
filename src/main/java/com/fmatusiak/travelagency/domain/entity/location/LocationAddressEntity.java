@@ -16,7 +16,7 @@ public class LocationAddressEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "cityName")
     private String cityName;

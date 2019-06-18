@@ -16,13 +16,13 @@ public class FlightPriceDetailPerAdultEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    int id;
+    private long id;
 
     @Column(name = "travelClass")
-    String travelClass;
+    private String travelClass;
 
     @Column(name = "availabilityTickets")
-    int availability;
+    private int availability;
 
     @OneToOne
     private FlightEntity flightEntity;

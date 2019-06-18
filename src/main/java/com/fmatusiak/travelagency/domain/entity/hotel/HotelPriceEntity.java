@@ -16,7 +16,7 @@ public class HotelPriceEntity {
     @Id
     @Column(name = "id", unique = true)
     @GeneratedValue
-    private int id;
+    private long id;
 
     @Column(name = "currency")
     private String currency;
