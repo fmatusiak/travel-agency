@@ -53,7 +53,7 @@ public class FlightPriceDetailPerAdultEntityControllerTest {
     public void getFlightPricedetailPerAdultById() throws Exception {
         //given
         FlightPriceDetailPerAdultEntity flightPriceDetailPerAdultEntity = new FlightPriceDetailPerAdultEntity(
-                       1L, TravelClass.ECONOMY.getName(),5,new FlightEntity());
+                1L, TravelClass.ECONOMY.getName(), 5, new FlightEntity());
 
         when(flightPriceDetailPerAdultEntityService
                 .addFlightPriceDetailPerAdult(any(FlightPriceDetailPerAdultEntity.class)))

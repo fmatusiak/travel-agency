@@ -5,8 +5,6 @@ import com.fmatusiak.travelagency.service.entity.hotel.HotelEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/v1/hotel")
 public class HotelEntityController {
@@ -20,7 +18,7 @@ public class HotelEntityController {
     }
 
     @GetMapping(value = "getHotel/{id}")
-    public Optional<HotelEntity> getHotelById(@PathVariable long id) {
+    public HotelEntity getHotelById(@PathVariable long id) {
         return hotelEntityService.getHotelById(id);
     }
 

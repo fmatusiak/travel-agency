@@ -31,7 +31,7 @@ public class FlightPriceEntityControllerTest {
     private FlightPriceEntityService flightPriceEntityService;
 
     @Test
-    public void addFlightPrice() throws Exception {
+    public void testAddFlightPrice() throws Exception {
         //given
         FlightPriceEntity flightPriceEntity = new FlightPriceEntity();
 
@@ -49,7 +49,7 @@ public class FlightPriceEntityControllerTest {
     }
 
     @Test
-    public void getFlightPriceById() throws Exception {
+    public void testGetFlightPriceById() throws Exception {
         //given
         FlightPriceEntity flightPriceEntity = new FlightPriceEntity(1L, 22.50, new FlightEntity());
 
@@ -67,7 +67,7 @@ public class FlightPriceEntityControllerTest {
     }
 
     @Test
-    public void deleteFlightById() throws Exception {
+    public void testDeleteFlightById() throws Exception {
         //given
         //when & then
         mockMvc.perform(delete("/v1/flight/deleteFlightPrice/1")

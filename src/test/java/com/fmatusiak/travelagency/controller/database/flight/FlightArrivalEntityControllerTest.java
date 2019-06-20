@@ -47,8 +47,6 @@ public class FlightArrivalEntityControllerTest {
         mockMvc.perform(post("/v1/flightArrival/addFlightArrival")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)).andExpect(status().isOk());
-
-
     }
 
     @Test

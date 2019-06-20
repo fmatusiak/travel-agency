@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Transactional
 @Service
@@ -20,8 +19,8 @@ public class HotelPriceEntityService {
         return hotelPriceEntityRepository.save(hotelPriceEntity);
     }
 
-    public Optional<HotelPriceEntity> getHotelPriceById(long id) {
-        return hotelPriceEntityRepository.findById(id);
+    public HotelPriceEntity getHotelPriceById(long id) {
+        return hotelPriceEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteHotelPriceById(long id) {

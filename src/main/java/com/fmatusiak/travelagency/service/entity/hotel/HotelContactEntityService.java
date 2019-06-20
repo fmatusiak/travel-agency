@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Transactional
 @Service
@@ -19,8 +18,8 @@ public class HotelContactEntityService {
         return hotelContactEntityRepository.save(hotelContactEntity);
     }
 
-    public Optional<HotelContactEntity> getHotelContactById(long id) {
-        return hotelContactEntityRepository.findById(id);
+    public HotelContactEntity getHotelContactById(long id) {
+        return hotelContactEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteHotelContactById(long id) {
