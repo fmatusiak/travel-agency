@@ -14,19 +14,19 @@ import javax.persistence.*;
 public class DailyForecastEntity {
 
     @Id
-    @Column(name = "ID", unique = true)
+    @Column(name = "id", unique = true)
     private long id;
 
-    @Column(name = "DATE")
+    @Column(name = "date")
     private String date;
 
-    @Column(name = "MINIMUM_TEMPERATURE")
+    @Column(name = "minimum_temperature")
     private double minimumTemperature;
 
-    @Column(name = "MAXIMUM_TEMPERATURE")
+    @Column(name = "maximum_temperature")
     private double maximumTemperature;
 
-    @Column(name = "UNIT")
+    @Column(name = "unit")
     private String unit;
 
     @OneToOne

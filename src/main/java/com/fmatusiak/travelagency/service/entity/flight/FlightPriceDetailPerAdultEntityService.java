@@ -19,8 +19,8 @@ public class FlightPriceDetailPerAdultEntityService {
         return flightPriceDetailPerAdultEntityRepository.save(flightPriceDetailPerAdultEntity);
     }
 
-    public Optional<FlightPriceDetailPerAdultEntity> getFlightPriceDetailPerAdultyById(long id) {
-        return flightPriceDetailPerAdultEntityRepository.findById(id);
+    public FlightPriceDetailPerAdultEntity getFlightPriceDetailPerAdultyById(long id) {
+        return flightPriceDetailPerAdultEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteFlightPriceDetailPerAdult(long id) {

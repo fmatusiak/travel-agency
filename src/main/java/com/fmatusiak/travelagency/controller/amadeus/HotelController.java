@@ -31,11 +31,11 @@ public class HotelController {
             , @PathVariable int adults) throws ResponseException {
         return hotelOfferMapper.hoteloffersTabToHotelList(
                 hotelService.getHotelOfferListByCityCode(new HotelPersonalizeBuilder()
-                .setCityCode(cityCode)
-                .setCheckInDate(checkInDate)
-                .setCheckOutDate(checkOutDate)
-                .setRoomQuantity(roomQuantity)
-                .setAdults(adults)
+                        .setCityCode(cityCode)
+                        .setCheckInDate(checkInDate)
+                        .setCheckOutDate(checkOutDate)
+                        .setRoomQuantity(roomQuantity)
+                        .setAdults(adults)
                         .createHotelPersonalize()));
     }
 

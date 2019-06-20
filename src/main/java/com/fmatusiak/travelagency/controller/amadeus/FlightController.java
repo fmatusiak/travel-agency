@@ -25,7 +25,7 @@ public class FlightController {
     private FlightOfferMapper flightOfferMapper;
 
     @GetMapping(value = "travelclass")
-    public List<TravelClass> getTravelClass(){
+    public List<TravelClass> getTravelClass() {
         return flightService.getTravelClass();
     }
 

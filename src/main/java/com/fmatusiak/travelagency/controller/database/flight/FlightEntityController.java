@@ -14,17 +14,17 @@ public class FlightEntityController {
     @Autowired
     private FlightEntityService flightEntityService;
 
-    @PostMapping(value = "/addFlight")
+    @PostMapping(value = "addFlight")
     public FlightEntity addFlight(@RequestBody FlightEntity flightEntity) {
         return flightEntityService.addFlightEntity(flightEntity);
     }
 
-    @GetMapping(value = "/getFlight/{id}")
-    public Optional<FlightEntity> getFlightById(@PathVariable long id) {
+    @GetMapping(value = "getFlight/{id}")
+    public FlightEntity getFlightById(@PathVariable long id) {
         return flightEntityService.getFlightEntityById(id);
     }
 
-    @DeleteMapping(value = "/deleteFlight/{id}")
+    @DeleteMapping(value = "deleteFlight/{id}")
     public void deleteFlightById(@PathVariable long id) {
         flightEntityService.deleteFlightEntityById(id);
     }

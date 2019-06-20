@@ -19,8 +19,8 @@ public class FlightPriceEntityService {
         return flightPriceEntityRepository.save(flightPriceEntity);
     }
 
-    public Optional<FlightPriceEntity> getFlightPriceById(long id) {
-        return flightPriceEntityRepository.findById(id);
+    public FlightPriceEntity getFlightPriceById(long id) {
+        return flightPriceEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteFlightPriceEntityById(long id) {

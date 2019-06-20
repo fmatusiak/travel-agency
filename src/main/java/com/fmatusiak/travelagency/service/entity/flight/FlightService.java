@@ -22,7 +22,7 @@ public class FlightService {
     @Autowired
     private AmadeusFlightClient amadeusFlightClient;
 
-    public List<TravelClass> getTravelClass(){
+    public List<TravelClass> getTravelClass() {
         return amadeusFlightClient.getTravelClass();
     }
 

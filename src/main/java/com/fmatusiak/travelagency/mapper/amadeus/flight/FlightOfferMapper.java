@@ -20,10 +20,10 @@ public class FlightOfferMapper {
                     for (FlightOffer.Segment segment : service.getSegments()) {
                         Flight offer = new FlightBuilder().setDeparture(
                                 new FlightDeparture(
-                                segment.getFlightSegment().getDeparture().getIataCode()
+                                        segment.getFlightSegment().getDeparture().getIataCode()
                                         , segment.getFlightSegment().getDeparture().getAt())).setArrival(
                                 new FlightArrival(
-                                segment.getFlightSegment().getArrival().getIataCode()
+                                        segment.getFlightSegment().getArrival().getIataCode()
                                         , segment.getFlightSegment().getArrival().getIataCode())).setPricingDetailPerAdult(
                                 new FlightPriceDetailPerAdult(
                                         segment.getPricingDetailPerAdult().getTravelClass()

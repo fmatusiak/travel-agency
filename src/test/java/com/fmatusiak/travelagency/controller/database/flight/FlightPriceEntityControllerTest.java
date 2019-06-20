@@ -1,8 +1,8 @@
 package com.fmatusiak.travelagency.controller.database.flight;
 
-import com.fmatusiak.travelagency.domain.entity.flight.FlightArrivalEntity;
 import com.fmatusiak.travelagency.domain.entity.flight.FlightEntity;
-import com.fmatusiak.travelagency.service.entity.flight.FlightArrivalEntityService;
+import com.fmatusiak.travelagency.domain.entity.flight.FlightPriceEntity;
+import com.fmatusiak.travelagency.service.entity.flight.FlightPriceEntityService;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,62 +20,57 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
-@WebMvcTest(FlightArrivalEntityController.class)
+@WebMvcTest(FlightPriceEntity.class)
 @RunWith(SpringRunner.class)
-public class FlightArrivalEntityControllerTest {
+public class FlightPriceEntityControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private FlightArrivalEntityService flightArrivalEntityService;
+    private FlightPriceEntityService flightPriceEntityService;
 
     @Test
-    public void testAddflightArrival() throws Exception {
+    public void addFlightPrice() throws Exception {
         //given
-        FlightArrivalEntity flightArrivalEntity = new FlightArrivalEntity();
+        FlightPriceEntity flightPriceEntity = new FlightPriceEntity();
 
-        when(flightArrivalEntityService.addFlightArrival(
-                any(FlightArrivalEntity.class)))
-                .thenReturn(flightArrivalEntity);
+        when(flightPriceEntityService
+                .addFlightPrice(any(FlightPriceEntity.class)))
+                .thenReturn(flightPriceEntity);
 
         Gson gson = new Gson();
-        String json = gson.toJson(flightArrivalEntity);
+        String json = gson.toJson(flightPriceEntity);
 
         //when & then
-        mockMvc.perform(post("/v1/flightArrival/addFlightArrival")
+        mockMvc.perform(post("/v1/flight/addFlightPrice")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)).andExpect(status().isOk());
-
-
     }
 
     @Test
-    public void testGetFlightArrivalById() throws Exception {
+    public void getFlightPriceById() throws Exception {
         //given
-        FlightArrivalEntity flightArrivalEntity =
-                new FlightArrivalEntity(1L, "test", "test", new FlightEntity());
+        FlightPriceEntity flightPriceEntity = new FlightPriceEntity(1L, 22.50, new FlightEntity());
 
-        when(flightArrivalEntityService
-                .addFlightArrival(any(FlightArrivalEntity.class)))
-                .thenReturn(flightArrivalEntity);
+        when(flightPriceEntityService
+                .addFlightPrice(any(FlightPriceEntity.class)))
+                .thenReturn(flightPriceEntity);
 
-        when(flightArrivalEntityService.getFlightArrivalById(1L)).thenReturn(flightArrivalEntity);
+        when(flightPriceEntityService.getFlightPriceById(1L)).thenReturn(flightPriceEntity);
 
         //when & then
-        mockMvc.perform(get("/v1/flight/getFlightArrival/1")
+        mockMvc.perform(get("/v1/flight/getFlightPrice/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", is(1)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.iataCode", is("test")))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.at", is("test")));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.total", is(22.50)));
     }
 
     @Test
-    public void testDeleteFlightArrivalById() throws Exception {
+    public void deleteFlightById() throws Exception {
         //given
         //when & then
-        mockMvc.perform(delete("/v1/flight/deleteFlightArrival/1")
+        mockMvc.perform(delete("/v1/flight/deleteFlightPrice/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
