@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Transactional
 @Service
@@ -20,8 +19,8 @@ public class LocationDataEntityService {
         return locationDataEntityRepository.save(locationDataEntity);
     }
 
-    public Optional<LocationDataEntity> getLocationDataById(long id) {
-        return locationDataEntityRepository.findById(id);
+    public LocationDataEntity getLocationDataById(long id) {
+        return locationDataEntityRepository.findById(id).orElse(null);
     }
 
     public void deleteLocationDataById(long id) {

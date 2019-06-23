@@ -5,8 +5,6 @@ import com.fmatusiak.travelagency.service.entity.location.LocationDataEntityServ
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping(value = "/v1/location")
 public class LocationDataEntityController {
@@ -20,7 +18,7 @@ public class LocationDataEntityController {
     }
 
     @GetMapping(value = "getLocationData/{id}")
-    public Optional<LocationDataEntity> getLocationDataById(@PathVariable long id) {
+    public LocationDataEntity getLocationDataById(@PathVariable long id) {
         return locationDataEntityService.getLocationDataById(id);
     }
 

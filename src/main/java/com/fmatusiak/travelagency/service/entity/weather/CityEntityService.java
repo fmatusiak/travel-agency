@@ -19,11 +19,11 @@ public class CityEntityService {
         return cityEntityRepository.save(cityEntity);
     }
 
-    public Optional<CityEntity> getCityById(long id) {
-        return cityEntityRepository.findById(id);
+    public CityEntity getCityById(Long id) {
+        return cityEntityRepository.findById(id).orElse(null);
     }
 
-    public void deleteCityById(long id) {
+    public void deleteCityById(Long id) {
         cityEntityRepository.deleteById(id);
     }
 }

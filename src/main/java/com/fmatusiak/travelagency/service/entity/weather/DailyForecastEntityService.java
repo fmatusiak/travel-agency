@@ -19,11 +19,11 @@ public class DailyForecastEntityService {
         return dailyForecastEntityRepository.save(dailyForecastEntity);
     }
 
-    public Optional<DailyForecastEntity> getDailyforecastById(long id) {
+    public Optional<DailyForecastEntity> getDailyforecastById(Long id) {
         return dailyForecastEntityRepository.findById(id);
     }
 
-    public void deleteDailyforecastById(long id) {
+    public void deleteDailyforecastById(Long id) {
         dailyForecastEntityRepository.deleteById(id);
     }
 

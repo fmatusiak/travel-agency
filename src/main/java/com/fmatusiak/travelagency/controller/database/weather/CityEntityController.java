@@ -20,12 +20,12 @@ public class CityEntityController {
     }
 
     @GetMapping(value = "getCity/{id}")
-    public Optional<CityEntity> getCityById(long id) {
+    public CityEntity getCityById(Long id) {
         return cityEntityService.getCityById(id);
     }
 
     @DeleteMapping(value = "deleteCity/{id}")
-    public void deleteCityById(long id) {
+    public void deleteCityById(Long id) {
         cityEntityService.deleteCityById(id);
     }
 

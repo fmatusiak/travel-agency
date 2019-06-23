@@ -20,12 +20,12 @@ public class DailyForecastEntityController {
     }
 
     @GetMapping(value = "getDailyForecast/{id}")
-    public Optional<DailyForecastEntity> getDailyforecastById(@PathVariable long id) {
+    public Optional<DailyForecastEntity> getDailyforecastById(@PathVariable Long id) {
         return dailyForecastEntityService.getDailyforecastById(id);
     }
 
     @DeleteMapping(value = "deleteDailyForecast/{id}")
-    public void deleteDailyforecastById(@PathVariable long id) {
+    public void deleteDailyforecastById(@PathVariable Long id) {
         dailyForecastEntityService.deleteDailyforecastById(id);
     }
 }
