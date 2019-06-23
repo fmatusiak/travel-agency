@@ -20,7 +20,7 @@ public class DailyForecastEntityController {
     }
 
     @GetMapping(value = "getDailyForecast/{id}")
-    public Optional<DailyForecastEntity> getDailyforecastById(@PathVariable Long id) {
+    public DailyForecastEntity getDailyforecastById(@PathVariable Long id) {
         return dailyForecastEntityService.getDailyforecastById(id);
     }
 
