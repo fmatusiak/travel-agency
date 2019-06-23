@@ -12,7 +12,6 @@ import java.util.List;
 
 @Component
 public class LocationMapper {
-
     public List<LocationScore> amadeusLocationTabToLocationList(final Location[] amadeusLocation) throws ResponseException {
         List<LocationScore> locationScoreList = new ArrayList<>();
         for (com.amadeus.resources.Location location1 : amadeusLocation) {
@@ -23,5 +22,4 @@ public class LocationMapper {
         }
         return locationScoreList;
     }
-
 }

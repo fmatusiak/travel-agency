@@ -18,12 +18,12 @@ public class HotelContactEntityController {
     }
 
     @GetMapping(value = "getHotelContact/{id}")
-    public HotelContactEntity getHotelContactById(@PathVariable long id) {
+    public HotelContactEntity getHotelContactById(@PathVariable Long id) {
         return hotelContactEntityService.getHotelContactById(id);
     }
 
     @DeleteMapping(value = "deleteHotelContact/{id}")
-    public void deleteHotelContactById(long id) {
+    public void deleteHotelContactById(Long id) {
         hotelContactEntityService.deleteHotelContactById(id);
     }
 

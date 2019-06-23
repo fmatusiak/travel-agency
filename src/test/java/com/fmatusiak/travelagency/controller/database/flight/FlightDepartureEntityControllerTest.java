@@ -42,7 +42,7 @@ public class FlightDepartureEntityControllerTest {
         String json = gson.toJson(flightDepartureEntity);
 
         //when & then
-        mockMvc.perform(post("/v1/flightDeparture/addFlightDeparture")
+        mockMvc.perform(post("/v1/flight/addFlightDeparture")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)).andExpect(status().isOk());
     }
@@ -60,7 +60,7 @@ public class FlightDepartureEntityControllerTest {
         when(flightDepartureEntityService.getFlightDepartureById(1L)).thenReturn(flightDepartureEntity);
 
         //when & then
-        mockMvc.perform(get("/v1/flightDeparture/getFlightDeparture/1")
+        mockMvc.perform(get("/v1/flight/getFlightDeparture/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.iataCode", Matchers.is("test")))
@@ -71,7 +71,7 @@ public class FlightDepartureEntityControllerTest {
     public void testDeleteflightDepartureById() throws Exception {
         //given
         //when & then
-        mockMvc.perform(delete("/v1/flightDeparture/deleteFlightDeparture/1")
+        mockMvc.perform(delete("/v1/flight/deleteFlightDeparture/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }

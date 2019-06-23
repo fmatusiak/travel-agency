@@ -44,7 +44,7 @@ public class FlightArrivalEntityControllerTest {
         String json = gson.toJson(flightArrivalEntity);
 
         //when & then
-        mockMvc.perform(post("/v1/flightArrival/addFlightArrival")
+        mockMvc.perform(post("/v1/flight/addFlightArrival")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json)).andExpect(status().isOk());
     }

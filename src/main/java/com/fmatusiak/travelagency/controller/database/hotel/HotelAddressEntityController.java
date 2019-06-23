@@ -18,14 +18,12 @@ public class HotelAddressEntityController {
     }
 
     @GetMapping(value = "getHotelAddress/{id}")
-    public HotelAddressEntity getHotelAddressById(@PathVariable long id) {
+    public HotelAddressEntity getHotelAddressById(@PathVariable Long id) {
         return hotelAddressEntityService.getHotelAddressById(id);
     }
 
     @DeleteMapping(value = "deleteHotelAddress/{id}")
-    public void deleteHotelAddressById(@PathVariable long id) {
+    public void deleteHotelAddressById(@PathVariable Long id) {
         hotelAddressEntityService.deleteHotelAddressById(id);
     }
-
-
 }

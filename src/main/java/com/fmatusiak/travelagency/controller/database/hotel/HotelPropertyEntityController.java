@@ -5,8 +5,6 @@ import com.fmatusiak.travelagency.service.entity.hotel.HotelPropertyEntityServic
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping(value = "/v1/hotel")
 public class HotelPropertyEntityController {
@@ -20,12 +18,12 @@ public class HotelPropertyEntityController {
     }
 
     @GetMapping(value = "getHotelProperty/{id}")
-    public Optional<HotelPropertyEntity> getHotelPropertyById(@PathVariable long id) {
+    public HotelPropertyEntity getHotelPropertyById(@PathVariable Long id) {
         return hotelPropertyEntityService.getHotelPropertyById(id);
     }
 
     @DeleteMapping(value = "deleteHotelProperty/{id}")
-    public void deleteHotelPropertyById(@PathVariable long id) {
+    public void deleteHotelPropertyById(@PathVariable Long id) {
         hotelPropertyEntityService.deleteHotelPropertyById(id);
     }
 }

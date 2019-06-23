@@ -18,11 +18,11 @@ public class FlightArrivalEntityService {
         return flightArrivalEntityRepository.save(flightArrivalEntity);
     }
 
-    public FlightArrivalEntity getFlightArrivalById(long id) {
+    public FlightArrivalEntity getFlightArrivalById(Long id) {
         return flightArrivalEntityRepository.findById(id).orElse(null);
     }
 
-    public void deleteFlightArrivalById(long id) {
+    public void deleteFlightArrivalById(Long id) {
         flightArrivalEntityRepository.deleteById(id);
     }
 

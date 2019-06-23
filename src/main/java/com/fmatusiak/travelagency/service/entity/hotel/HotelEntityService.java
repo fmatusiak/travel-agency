@@ -18,11 +18,11 @@ public class HotelEntityService {
         return hotelEntityRepository.save(hotelEntity);
     }
 
-    public HotelEntity getHotelById(long id) {
+    public HotelEntity getHotelById(Long id) {
         return hotelEntityRepository.findById(id).orElse(null);
     }
 
-    public void deleteHotelById(long id) {
+    public void deleteHotelById(Long id) {
         hotelEntityRepository.deleteById(id);
     }
 }

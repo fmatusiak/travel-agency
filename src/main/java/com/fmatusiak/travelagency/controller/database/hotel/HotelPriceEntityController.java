@@ -18,12 +18,12 @@ public class HotelPriceEntityController {
     }
 
     @GetMapping(value = "getHotelPrice/{id}")
-    public HotelPriceEntity getHotelPriceById(@PathVariable long id) {
+    public HotelPriceEntity getHotelPriceById(@PathVariable Long id) {
         return hotelPriceEntityService.getHotelPriceById(id);
     }
 
     @DeleteMapping(value = "deleteHotelPrice/{id}")
-    public void deleteHotelPriceById(@PathVariable long id) {
+    public void deleteHotelPriceById(@PathVariable Long id) {
         hotelPriceEntityService.deleteHotelPriceById(id);
     }
 }

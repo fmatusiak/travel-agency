@@ -19,12 +19,12 @@ public class FlightPriceDetailPerAdultEntityController {
     }
 
     @GetMapping(value = "getFlightPriceDetail/{id}")
-    public FlightPriceDetailPerAdultEntity getFlightPricedetailPerAdultById(@PathVariable long id) {
+    public FlightPriceDetailPerAdultEntity getFlightPricedetailPerAdultById(@PathVariable Long id) {
         return flightPriceDetailPerAdultEntityService.getFlightPriceDetailPerAdultyById(id);
     }
 
     @DeleteMapping(value = "deleteFlightPriceDetail/{id}")
-    public void deleteFlightPricedetailPerAdultById(@PathVariable long id) {
+    public void deleteFlightPricedetailPerAdultById(@PathVariable Long id) {
         flightPriceDetailPerAdultEntityService.deleteFlightPriceDetailPerAdult(id);
     }
 

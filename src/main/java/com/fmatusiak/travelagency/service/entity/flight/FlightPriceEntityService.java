@@ -18,11 +18,11 @@ public class FlightPriceEntityService {
         return flightPriceEntityRepository.save(flightPriceEntity);
     }
 
-    public FlightPriceEntity getFlightPriceById(long id) {
+    public FlightPriceEntity getFlightPriceById(Long id) {
         return flightPriceEntityRepository.findById(id).orElse(null);
     }
 
-    public void deleteFlightPriceEntityById(long id) {
+    public void deleteFlightPriceEntityById(Long id) {
         flightPriceEntityRepository.deleteById(id);
     }
 }

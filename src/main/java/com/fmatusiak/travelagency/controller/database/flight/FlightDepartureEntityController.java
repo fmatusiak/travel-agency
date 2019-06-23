@@ -18,12 +18,12 @@ public class FlightDepartureEntityController {
     }
 
     @GetMapping(value = "getFlightDeparture/{id}")
-    public FlightDepartureEntity getflightDepartureById(@PathVariable long id) {
+    public FlightDepartureEntity getflightDepartureById(@PathVariable Long id) {
         return flightDepartureEntityService.getFlightDepartureById(id);
     }
 
     @DeleteMapping(value = "deleteFlightDeparture/{id}")
-    public void deleteflightDepartureById(@PathVariable long id) {
+    public void deleteflightDepartureById(@PathVariable Long id) {
         flightDepartureEntityService.deleteFlightDepartureById(id);
     }
 }
