@@ -1,6 +1,7 @@
 package com.fmatusiak.travelagency.controller.database.weather;
 
 import com.fmatusiak.travelagency.domain.entity.weather.CityEntity;
+import com.fmatusiak.travelagency.domain.entity.weather.DailyForecastEntity;
 import com.fmatusiak.travelagency.service.entity.weather.CityEntityService;
 import com.google.gson.Gson;
 import org.junit.Test;
@@ -11,11 +12,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(CityEntityController.class)
@@ -44,7 +46,7 @@ public class CityEntityControllerTest {
                 .content(json)).andExpect(status().isOk());
     }
 
-    /*@Test
+    @Test
     public void getCityById() throws Exception {
         //given
         CityEntity cityEntity = new CityEntity(
@@ -62,7 +64,7 @@ public class CityEntityControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.key", is("test")))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.localizedName", is("test")))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.countryName", is("test")));
-    }*/
+    }
 
     @Test
     public void deleteCityById() throws Exception {

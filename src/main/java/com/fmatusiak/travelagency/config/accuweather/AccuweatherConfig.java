@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class AccuweatherConfig {
 
     @Value("${accuweather.endpoint}")
-    private String enpoint;
+    private String endpoint;
 
     @Value("${accuweather.endpoint.forecasts}")
     private String endpointForecasts;

@@ -52,7 +52,8 @@ public class DailyForecastEntityControllerTest {
     public void getDailyforecastById() throws Exception {
         //given
         DailyForecastEntity dailyForecastEntity = new DailyForecastEntity
-                (1L, "2019-10-06", 18.00, 25.00, "test", new CityEntity());
+                (1L, "2019-10-06", 18.00
+                        , 25.00, "test", new CityEntity());
 
         when(dailyForecastEntityService.addDailyforecast
                 (any(DailyForecastEntity.class)))

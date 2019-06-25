@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CITIES")
+@Table(name = "CITY")
 public class CityEntity {
 
     @Id
@@ -27,10 +27,10 @@ public class CityEntity {
     @Column(name = "regionName")
     private String regionName;
 
-    @Column(name = "countryNane")
-    private String countryNane;
+    @Column(name = "countryName")
+    private String countryName;
 
     @OneToOne(mappedBy = "cityEntity")
-    @JoinColumn(name = "DAILY_FORECAST_ID", referencedColumnName = "id")
+    @JoinColumn(name = "id_daily_dorecast", referencedColumnName = "id")
     private DailyForecastEntity dailyForecastEntity;
 }

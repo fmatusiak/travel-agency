@@ -48,4 +48,5 @@ public class FlightOfferMapperTest {
         //then
         Assert.assertNotNull(flightList);
     }
+
 }

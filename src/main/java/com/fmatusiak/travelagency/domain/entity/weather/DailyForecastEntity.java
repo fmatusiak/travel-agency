@@ -15,6 +15,7 @@ public class DailyForecastEntity {
 
     @Id
     @Column(name = "id", unique = true)
+    @GeneratedValue
     private long id;
 
     @Column(name = "date")
