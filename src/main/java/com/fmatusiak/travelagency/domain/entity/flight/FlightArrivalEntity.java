@@ -26,4 +26,9 @@ public class FlightArrivalEntity {
 
     @OneToOne
     private FlightEntity flightEntity;
+
+    public FlightArrivalEntity(String iataCode, String at) {
+        this.iataCode = iataCode;
+        this.at = at;
+    }
 }

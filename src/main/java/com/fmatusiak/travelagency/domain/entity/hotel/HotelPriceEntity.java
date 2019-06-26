@@ -23,4 +23,9 @@ public class HotelPriceEntity {
 
     @Column(name = "total")
     private String total;
+
+    public HotelPriceEntity(String currency, String total) {
+        this.currency = currency;
+        this.total = total;
+    }
 }

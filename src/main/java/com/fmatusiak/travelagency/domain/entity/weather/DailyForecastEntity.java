@@ -32,4 +32,11 @@ public class DailyForecastEntity {
 
     @OneToOne
     private CityEntity cityEntity;
+
+    public DailyForecastEntity(String date, double minimumTemperature, double maximumTemperature, String unit) {
+        this.date = date;
+        this.minimumTemperature = minimumTemperature;
+        this.maximumTemperature = maximumTemperature;
+        this.unit = unit;
+    }
 }

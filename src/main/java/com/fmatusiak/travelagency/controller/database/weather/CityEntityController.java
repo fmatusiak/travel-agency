@@ -18,12 +18,12 @@ public class CityEntityController {
     }
 
     @GetMapping(value = "getCity/{id}")
-    public CityEntity getCityById(Long id) {
+    public CityEntity getCityById(@PathVariable Long id) {
         return cityEntityService.getCityById(id);
     }
 
     @DeleteMapping(value = "deleteCity/{id}")
-    public void deleteCityById(Long id) {
+    public void deleteCityById(@PathVariable Long id) {
         cityEntityService.deleteCityById(id);
     }
 

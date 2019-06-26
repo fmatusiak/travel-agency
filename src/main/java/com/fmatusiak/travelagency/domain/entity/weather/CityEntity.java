@@ -33,4 +33,11 @@ public class CityEntity {
     @OneToOne(mappedBy = "cityEntity")
     @JoinColumn(name = "id_daily_dorecast", referencedColumnName = "id")
     private DailyForecastEntity dailyForecastEntity;
+
+    public CityEntity(String key, String localizedName, String regionName, String countryName) {
+        this.key = key;
+        this.localizedName = localizedName;
+        this.regionName = regionName;
+        this.countryName = countryName;
+    }
 }

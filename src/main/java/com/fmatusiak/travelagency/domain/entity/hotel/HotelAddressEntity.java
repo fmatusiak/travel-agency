@@ -26,4 +26,9 @@ public class HotelAddressEntity {
 
     @OneToOne
     private HotelEntity hotelEntity;
+
+    public HotelAddressEntity(String cityName, String countryCode) {
+        this.cityName = cityName;
+        this.countryCode = countryCode;
+    }
 }

@@ -26,4 +26,9 @@ public class HotelContactEntity {
 
     @OneToOne
     private HotelEntity hotelEntity;
+
+    public HotelContactEntity(String phone, String fax) {
+        this.phone = phone;
+        this.fax = fax;
+    }
 }

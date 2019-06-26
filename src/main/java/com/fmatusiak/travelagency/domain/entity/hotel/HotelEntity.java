@@ -31,4 +31,13 @@ public class HotelEntity {
     @JoinColumn(name = "id_hotel_contact", referencedColumnName = "id")
     @OneToOne(mappedBy = "hotelEntity")
     private HotelContactEntity hotelContactEntity;
+
+    public HotelEntity(
+            HotelPropertyEntity hotelPropertyEntity
+            , HotelAddressEntity hotelAddressEntity
+            , HotelContactEntity hotelContactEntity) {
+        this.hotelPropertyEntity = hotelPropertyEntity;
+        this.hotelAddressEntity = hotelAddressEntity;
+        this.hotelContactEntity = hotelContactEntity;
+    }
 }

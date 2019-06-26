@@ -34,4 +34,12 @@ public class FlightEntity {
     @JoinColumn(name = "id_flight_Price_Detail_Per_Adult_Entity", referencedColumnName = "id")
     @OneToOne(mappedBy = "flightEntity")
     private FlightPriceDetailPerAdultEntity flightPriceDetailPerAdultEntity;
+
+    public FlightEntity(FlightArrivalEntity flightArrivalEntity, FlightDepartureEntity flightDepartureEntity
+            , FlightPriceEntity flightPriceEntity, FlightPriceDetailPerAdultEntity flightPriceDetailPerAdultEntity) {
+        this.flightArrivalEntity = flightArrivalEntity;
+        this.flightDepartureEntity = flightDepartureEntity;
+        this.flightPriceEntity = flightPriceEntity;
+        this.flightPriceDetailPerAdultEntity = flightPriceDetailPerAdultEntity;
+    }
 }

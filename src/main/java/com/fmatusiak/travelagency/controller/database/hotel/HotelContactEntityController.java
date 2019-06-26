@@ -23,7 +23,7 @@ public class HotelContactEntityController {
     }
 
     @DeleteMapping(value = "deleteHotelContact/{id}")
-    public void deleteHotelContactById(Long id) {
+    public void deleteHotelContactById(@PathVariable Long id) {
         hotelContactEntityService.deleteHotelContactById(id);
     }
 

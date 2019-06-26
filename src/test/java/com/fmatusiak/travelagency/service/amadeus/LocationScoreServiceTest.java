@@ -19,7 +19,7 @@ public class LocationScoreServiceTest {
     @Test
     public void testFindCityListSearchByKeyword() throws ResponseException {
         //given
-        Location[] locationCities = locationService.getFindCityListSearchByKeyword("LON");
+        Location[] locationCities = locationService.getFindCityListSearchByKeyword("W");
         //when
         //then
         Assert.assertNotNull(locationCities);

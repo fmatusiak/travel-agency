@@ -23,4 +23,8 @@ public class FlightPriceEntity {
 
     @OneToOne
     private FlightEntity flightEntity;
+
+    public FlightPriceEntity(double total) {
+        this.total = total;
+    }
 }

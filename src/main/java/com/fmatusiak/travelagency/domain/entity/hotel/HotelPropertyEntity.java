@@ -35,4 +35,12 @@ public class HotelPropertyEntity {
 
     @OneToOne
     private HotelEntity hotelEntity;
+
+    public HotelPropertyEntity(String chainCode, String name, int rating, String cityCode, HotelEntity hotelEntity) {
+        this.chainCode = chainCode;
+        this.name = name;
+        this.rating = rating;
+        this.cityCode = cityCode;
+        this.hotelEntity = hotelEntity;
+    }
 }

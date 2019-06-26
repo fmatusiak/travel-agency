@@ -26,4 +26,9 @@ public class FlightPriceDetailPerAdultEntity {
 
     @OneToOne
     private FlightEntity flightEntity;
+
+    public FlightPriceDetailPerAdultEntity(String travelClass, int availability) {
+        this.travelClass = travelClass;
+        this.availability = availability;
+    }
 }

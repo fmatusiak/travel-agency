@@ -29,4 +29,10 @@ public class LocationAddressEntity {
 
     @OneToOne
     private LocationEntity locationEntity;
+
+    public LocationAddressEntity(String cityName, String cityCode, String countryName) {
+        this.cityName = cityName;
+        this.cityCode = cityCode;
+        this.countryName = countryName;
+    }
 }

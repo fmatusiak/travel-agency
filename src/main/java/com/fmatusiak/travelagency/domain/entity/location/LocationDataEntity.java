@@ -29,4 +29,10 @@ public class LocationDataEntity {
 
     @OneToOne
     private LocationEntity locationEntity;
+
+    public LocationDataEntity(String name, String detailedName, String iataCode) {
+        this.name = name;
+        this.detailedName = detailedName;
+        this.iataCode = iataCode;
+    }
 }

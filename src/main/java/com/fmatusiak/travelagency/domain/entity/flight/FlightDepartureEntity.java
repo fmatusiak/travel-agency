@@ -26,4 +26,10 @@ public class FlightDepartureEntity {
 
     @OneToOne
     private FlightEntity flightEntity;
+
+    public FlightDepartureEntity(String iataCode, String at) {
+        this.iataCode = iataCode;
+        this.at = at;
+    }
 }
+

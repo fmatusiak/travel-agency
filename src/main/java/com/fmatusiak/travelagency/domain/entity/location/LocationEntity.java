@@ -25,4 +25,9 @@ public class LocationEntity {
     @JoinColumn(name = "id_location_address", referencedColumnName = "id")
     @OneToOne(mappedBy = "locationEntity", targetEntity = LocationAddressEntity.class)
     private LocationAddressEntity locationAddressEntity;
+
+    public LocationEntity(LocationDataEntity locationDataEntity, LocationAddressEntity locationAddressEntity) {
+        this.locationDataEntity = locationDataEntity;
+        this.locationAddressEntity = locationAddressEntity;
+    }
 }
